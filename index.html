@@ -3,53 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Toggle</title>
+    <title>Fresh Pomegranates for Sale</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            transition: background-color 0.3s, color 0.3s;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-        body.light {
-            background-color: #ffffff;
-            color: #333333;
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
-        body.dark {
-            background-color: #333333;
-            color: #ffffff;
+        header {
+            background-color: #a51414;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        header h1 {
+            font-size: 2rem;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1200x400?text=Pomegranate+Banner') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+        .product-card .price {
+            color: #a51414;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .product-card .cta {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #a51414;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .product-card .cta:hover {
+            background-color: #8b0f0f;
+        }
+        .benefits {
+            margin: 3rem 0;
             text-align: center;
         }
-        .toggle-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
+        .benefits h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
-        .toggle-button:hover {
-            background-color: #0056b3;
+        .benefits ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .benefits li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .benefits li::before {
+            content: '✓';
+            color: #a51414;
+            position: absolute;
+            left: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 300px;
+            }
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            .product-card {
+                width: 100%;
+                max-width: 350px;
+            }
         }
     </style>
 </head>
-<body class="light">
-    <div class="container">
-        <h1>Welcome to My Page</h1>
-        <p>This is a simple page with a dark mode toggle feature.</p>
-        <button class="toggle-button" onclick="toggleTheme()">Toggle Dark Mode</button>
-    </div>
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle('light');
-            body.classList.toggle('dark');
-        }
-    </script>
+<body>
+    <header>
+        <h1>Fresh Pomegranates</h1>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Juicy & Fresh Pomegranates</h2>
+            <p>Only ₹130 per kg!</p>
+        </div>
+    </section>
+    <section class="content">
+        <div class="product-section">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x200?text=Pomegranate" alt="Fresh Pomegranate">
+                <h3>Premium Pomegranates</h3>
+                <div class="price">₹130/kg</div>
+                <a href="#order" class="cta">Order Now</a>
+            </div>
+        </div>
+        <div class="benefits">
+            <h2>Why Choose Our Pomegranates?</h2>
+            <ul>
+                <li>Freshly harvested from local farms</li>
+                <li>Rich in antioxidants and vitamins</li>
+                <li>Perfect for juicing or snacking</li>
+                <li>100% organic and pesticide-free</li>
+                <li>Fast and reliable delivery</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Fresh Pomegranates. All rights reserved. Contact us at support@pomegranates.in</p>
+    </footer>
 </body>
 </html>
